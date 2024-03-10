@@ -6,7 +6,7 @@ and try to get a figma file by its key
 import requests
 
 figma_API_base_url = "https://api.figma.com"
-access_token = ""
+
 
 
 def get_figma_file(file_key):
