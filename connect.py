@@ -33,7 +33,6 @@ if __name__ == "__main__":
 
     if figma_file:
         print("figma file fetched successfully!")
-        # print(figma_file)
 
         with open("figma_file.json", "w") as json_file:
             json.dump(figma_file, json_file, indent=4)
