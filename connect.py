@@ -2,7 +2,7 @@
 We first try to connect the figma api
 and try to get a figma file by its key
 '''
-
+import json
 import requests
 
 figma_API_base_url = "https://api.figma.com"
@@ -25,13 +25,19 @@ def get_figma_file(file_key):
     else:
         print(f"Failed to fetch Figma file: {response.text}")
 
+
+
 if __name__ == "__main__":
     file_key = "HOEemgNB1Ce3lo4qn0jKeN"
     figma_file = get_figma_file(file_key)
 
     if figma_file:
         print("figma file fetched successfully!")
-        print(figma_file)
+        # print(figma_file)
+
+        with open("figma_file.json", "w") as json_file:
+            json.dump(figma_file, json_file, indent=4)
+
 
 
 
