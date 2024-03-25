@@ -1,41 +1,53 @@
+# from openai import OpenAI
+# from config import API_KEY
+
+# # # Initialize the OpenAI client with your API key
+# api_key = API_KEY
+# client = OpenAI(api_key=api_key)
+
+
+# stream = client.chat.completions.create(
+#     model="gpt-3.5-turbo",
+#     messages=[{"role": "user", "content": "What do u think about kid cudi"}],
+#     stream=True,
+# )
+# for chunk in stream:
+#     if chunk.choices[0].delta.content is not None:
+#         print(chunk.choices[0].delta.content, end="")
+# a
+
+
 from openai import OpenAI
 from config import API_KEY
 
-# # Initialize the OpenAI client with your API key
 api_key = API_KEY
 client = OpenAI(api_key=api_key)
 
-# # Define the conversation messages
-# messages = [
-#     {"role": "system", "content": "You are a helpful assistant."},
-#     {"role": "user", "content": "Who won the world series in 2020?"},
-#     {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
-#     {"role": "user", "content": "Where was it played?"}
-# ]
+def generate_dynamic_code(static_code):
+    stream = client.chat.completions.create(
+        model = "gpt-3.5-turbo",
+        messages = [{"role": "user", "content": "Here is the static code: {static_code}, I need to change it a dynamic code, give me dynamic code"}],
+        stream = True,
+    )
 
-# # Create completions for the conversation
-# response = client.chat.completions.create(
-#     model="gpt-3.5-turbo",
-#     messages=messages
-# )
+    dynamic_code = ""
 
-# # Print the response
-# print(response)
+    for chunk in stream:
+        if chunk.choices[0].delta.content is not None:
+            dynamic_code += chunk.choices[0].delta.content
+    return dynamic_code
 
 
-###
-from openai import OpenAI
+if __name__ == "__main__":
+    static_code = input("Enter Static Code: ")
+    dynamic_code = generate_dynamic_code(static_code)
 
-# client = OpenAI()
+    print("dynamic code with prompts: ")
+    print(dynamic_code)
 
-stream = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[{"role": "user", "content": "What do u think about kid cudi"}],
-    stream=True,
-)
-for chunk in stream:
-    if chunk.choices[0].delta.content is not None:
-        print(chunk.choices[0].delta.content, end="")
+
+
+
 
 
 
