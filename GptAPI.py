@@ -29,8 +29,8 @@ from openai import OpenAI
 # client = OpenAI()
 
 stream = client.chat.completions.create(
-    model="gpt-4",
-    messages=[{"role": "user", "content": "Say this is a test"}],
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "What do u think about kid cudi"}],
     stream=True,
 )
 for chunk in stream:
