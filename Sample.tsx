@@ -1,4 +1,4 @@
-Here is the dynamic code with prompts for the static code provided:
+// Here is the dynamic code with prompts for the static code provided:
 
 ```jsx
 import * as React from "react";
