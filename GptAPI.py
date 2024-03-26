@@ -10,6 +10,7 @@ def generate_dynamic_code(static_code):
     # Wrap the static code in a prompt
     prompt = "Generate dynamic code for the following static code:\n" + static_code + "\n\nDynamic code with prompts:"
     
+    
     # Define the conversation messages
     stream = client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
