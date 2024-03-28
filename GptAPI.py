@@ -17,7 +17,6 @@ def generate_dynamic_code(static_code):
         messages=[{"role": "user", "content": prompt}],
         stream=True,
     )
-
     dynamic_code = ""
     for chunk in stream:
         if chunk.choices[0].delta.content is not None:
