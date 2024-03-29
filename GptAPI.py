@@ -24,8 +24,9 @@ def generate_dynamic_code(static_code):
     
     return dynamic_code
 
+#change this only make it for react or something be consistent to 1 framework
 def detect_language(code):
-    if "import" in code or "export" in code or ".tsx" in code:
+    if "import" in code or "export" in code or ".jsx" in code:
         return "tsx"  
     else:
         return langdetect.detect(code)
