@@ -1,6 +1,6 @@
-# screenshot-to-code
+# screenshot - convert - code
 
-A simple tool to convert screenshots, mockups and Figma designs into clean, functional code using AI. **Now supporting GPT-4O!**
+A simple tool to convert screenshots, mockups and Figma designs into clean, functional code using AI. 
 
 https://github.com/abi/screenshot-to-code/assets/23818/6cebadae-2fe3-4986-ac6a-8fb9db030045
 
@@ -26,14 +26,6 @@ See the [Examples](#-examples) section below for more demos.
 We also just added experimental support for taking a video/screen recording of a website in action and turning that into a functional prototype. 
 
 ![google in app quick 3](https://github.com/abi/screenshot-to-code/assets/23818/8758ffa4-9483-4b9b-bb66-abd6d1594c33)
-
-[Learn more about video here](https://github.com/abi/screenshot-to-code/wiki/Screen-Recording-to-Code).
-
-[Follow me on Twitter for updates](https://twitter.com/_abi_).
-
-## 🚀 Try It Out without no install
-
-[Try it live on the hosted version (paid)](https://screenshottocode.com).
 
 ## 🛠 Getting Started
 
